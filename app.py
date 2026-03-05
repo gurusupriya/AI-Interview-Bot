@@ -17,6 +17,19 @@ st.set_page_config(page_title="InterviewGenie AI", layout="centered")
 # API Key Input
 api_key = st.sidebar.text_input("Enter your Gemini API Key", type="password")
 
+with st.sidebar.expander("How to get a Gemini API Key"):
+    st.markdown("""
+    1. Go to **Google AI Studio**: https://aistudio.google.com/
+    2. Sign in with your **Google account**.
+    3. Click **Get API Key**.
+    4. Select **Create API Key**.
+    5. Copy the generated key.
+    6. Paste it in the **Gemini API Key field above**.
+    """)
+
+if not api_key:
+    st.warning("Please enter your Gemini API key in the sidebar to start the interview.")
+    st.stop()
 if api_key:
     genai.configure(api_key=api_key)
 else:
@@ -110,3 +123,4 @@ if st.session_state.interview_started and job_description and resume_text:
             file_name="Interview_Report.pdf",
         mime="application/pdf"
         )
+
