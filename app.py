@@ -21,7 +21,7 @@ with st.sidebar.expander("How to get a Gemini API Key"):
     st.markdown("""
     1. Go to **Google AI Studio**: https://aistudio.google.com/
     2. Sign in with your **Google account**.
-    3. Click **Get API Key**.
+    3. Click **Get API Key** (top right corner).
     4. Select **Create API Key**.
     5. Copy the generated key.
     6. Paste it in the **Gemini API Key field above**.
@@ -36,7 +36,7 @@ else:
     st.warning("Please enter your Gemini API key in the sidebar to start.")
     st.stop()
 # Inputs
-uploaded_resume = st.file_uploader("Upload Resume (PDF or TXT only)", type=["pdf"])
+uploaded_resume = st.file_uploader("Upload Resume (PDF)", type=["pdf"])
 resume_text = ""
 if uploaded_resume:
     resume_text = extract_resume_text(uploaded_resume)
@@ -123,4 +123,5 @@ if st.session_state.interview_started and job_description and resume_text:
             file_name="Interview_Report.pdf",
         mime="application/pdf"
         )
+
 
