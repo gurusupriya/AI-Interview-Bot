@@ -28,12 +28,7 @@ with st.sidebar.expander("How to get a Groq API Key"):
     """)
 
 if not api_key:
-    st.warning("Please enter your Gemini API key in the sidebar to start the interview.")
-    st.stop()
-if api_key:
-    genai.configure(api_key=api_key)
-else:
-    st.warning("Please enter your Groq API key in the sidebar to start.")
+    st.warning("Please enter your Groq API key in the sidebar to start the interview.")
     st.stop()
 # Inputs
 uploaded_resume = st.file_uploader("Upload Resume (PDF)", type=["pdf"])
