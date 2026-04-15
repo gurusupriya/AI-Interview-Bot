@@ -41,7 +41,7 @@ Your response MUST be **valid JSON ONLY** in this exact format:
 }}
 """
 
-    raw = call_groq(prompt)
+    raw = call_groq(prompt,api_key)
     parsed = extract_json(raw)
 
     if parsed:
