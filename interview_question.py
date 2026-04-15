@@ -1,7 +1,7 @@
 from gemini_utils import call_groq, extract_json
 import streamlit as st
 
-def generate_question(job_description, resume_text, difficulty, last_score):
+def generate_question(job_description, resume_text, difficulty, last_score,api_key):
     # Determine difficulty
     if difficulty != "Adaptive":
         level = difficulty
@@ -38,4 +38,4 @@ Rules:
 - 80% technical questions, 20% behavioral.
 - Return ONLY the question text.
 """
-    return call_groq(prompt).strip()
+    return call_groq(prompt,api_key).strip()
