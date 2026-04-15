@@ -1,4 +1,4 @@
-from gemini_utils import call_gemini, extract_json
+from gemini_utils import call_groq, extract_json
 
 def evaluate_answer(job_description, resume_text, question, answer):
     if len(answer.strip()) < 4:
@@ -41,7 +41,7 @@ Your response MUST be **valid JSON ONLY** in this exact format:
 }}
 """
 
-    raw = call_gemini(prompt)
+    raw = call_groq(prompt)
     parsed = extract_json(raw)
 
     if parsed:
