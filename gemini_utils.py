@@ -2,9 +2,7 @@ from groq import Groq
 import json
 import re
 
-def call_groq(prompt):
-    api_key = st.session_state.get("GROQ_API_KEY")
-
+def call_groq(prompt, api_key):
     client = Groq(api_key=api_key)
 
     response = client.chat.completions.create(
