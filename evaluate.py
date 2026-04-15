@@ -1,6 +1,6 @@
 from gemini_utils import call_groq, extract_json
 
-def evaluate_answer(job_description, resume_text, question, answer):
+def evaluate_answer(job_description, resume_text, question, answer,api_key):
     if len(answer.strip()) < 4:
         return 2, "Your answer is extremely short. Please try to explain your thoughts more clearly."
 
