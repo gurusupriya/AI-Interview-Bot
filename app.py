@@ -6,7 +6,6 @@ from resume_upload import extract_resume_text
 from report import create_pdf
 import time
 import random
-import google.generativeai as genai
 
 st.set_page_config(page_title="InterviewGenie AI", layout="centered")
 st.title(" InterviewGenie AI")
