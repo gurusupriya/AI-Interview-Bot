@@ -1,4 +1,4 @@
-from gemini_utils import call_gemini, extract_json
+from gemini_utils import call_groq, extract_json
 import streamlit as st
 
 def generate_question(job_description, resume_text, difficulty, last_score):
@@ -30,7 +30,7 @@ Previously Asked Questions:
 {previous_questions}
 
 Rules:
-- Generate 1 new interview question which is not in previously aked questions.
+- Generate 1 new interview question which is not in previously asked questions.
 - the candidate is fresher, ask only fresher questions
 - Maximum 1–2 lines.
 - Must NOT repeat or rephrase previous questions.
@@ -38,4 +38,4 @@ Rules:
 - 80% technical questions, 20% behavioral.
 - Return ONLY the question text.
 """
-    return call_gemini(prompt).strip()
+    return call_groq(prompt).strip()
