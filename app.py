@@ -62,7 +62,7 @@ if st.session_state.interview_started and job_description and resume_text:
 
         if len(st.session_state.questions) <= st.session_state.index:
             last = st.session_state.scores[-1] if st.session_state.scores else 5
-            q = generate_question(job_description, resume_text, difficulty, last)
+            q = generate_question(job_description, resume_text, difficulty,api_key)
             st.session_state.questions.append(q)
 
         q = st.session_state.questions[st.session_state.index]
@@ -74,7 +74,7 @@ if st.session_state.interview_started and job_description and resume_text:
             if ans.strip() == "":
                 st.warning("Please enter an answer.")
             else:
-                score, feedback = evaluate_answer(job_description, resume_text, q, ans)
+                score, feedback = evaluate_answer(job_description, resume_text, q, ans,api_key)
 
                 st.session_state.answers.append(ans)
                 st.session_state.scores.append(score)
