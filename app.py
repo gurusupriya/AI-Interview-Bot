@@ -19,12 +19,12 @@ api_key = st.sidebar.text_input("Enter your Groq API Key", type="password")
 
 with st.sidebar.expander("How to get a Groq API Key"):
     st.markdown("""
-    1. Go to **Google AI Studio**: https://aistudio.google.com/
-    2. Sign in with your **Google account**.
-    3. Click **Get API Key** (top right corner).
-    4. Select **Create API Key**.
+    1. Go to **Groq Console**: https://console.groq.com/
+    2. Sign in (or create an account).
+    3. Navigate to the **API Keys** section.
+    4. Click **Create API Key**.
     5. Copy the generated key.
-    6. Paste it in the **Gemini API Key field above**.
+    6. Paste it in the **Groq API Key field above**.
     """)
 
 if not api_key:
