@@ -15,9 +15,9 @@ st.write("This app asks 10–15 interview questions and scores your answers like
 st.set_page_config(page_title="InterviewGenie AI", layout="centered")
 
 # API Key Input
-api_key = st.sidebar.text_input("Enter your Gemini API Key", type="password")
+api_key = st.sidebar.text_input("Enter your Groq API Key", type="password")
 
-with st.sidebar.expander("How to get a Gemini API Key"):
+with st.sidebar.expander("How to get a Groq API Key"):
     st.markdown("""
     1. Go to **Google AI Studio**: https://aistudio.google.com/
     2. Sign in with your **Google account**.
@@ -33,7 +33,7 @@ if not api_key:
 if api_key:
     genai.configure(api_key=api_key)
 else:
-    st.warning("Please enter your Gemini API key in the sidebar to start.")
+    st.warning("Please enter your Groq API key in the sidebar to start.")
     st.stop()
 # Inputs
 uploaded_resume = st.file_uploader("Upload Resume (PDF)", type=["pdf"])
