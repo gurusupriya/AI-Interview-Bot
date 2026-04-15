@@ -30,6 +30,7 @@ with st.sidebar.expander("How to get a Groq API Key"):
 if not api_key:
     st.warning("Please enter your Groq API key in the sidebar to start the interview.")
     st.stop()
+st.session_state["GROQ_API_KEY"] = api_key
 # Inputs
 uploaded_resume = st.file_uploader("Upload Resume (PDF)", type=["pdf"])
 resume_text = ""
